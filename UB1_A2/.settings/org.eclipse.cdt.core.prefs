@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.exe.debug.1962928285/PATH/delimiter=\:
+environment/project/cdt.managedbuild.config.gnu.exe.debug.1962928285/PATH/operation=replace
+environment/project/cdt.managedbuild.config.gnu.exe.debug.1962928285/PATH/value=/home/swt/bin\:/opt/bin\:/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/usr/games\:/usr/local/games\:/home/swt/dev/gocode/bin\:/home/swt/extra
+environment/project/cdt.managedbuild.config.gnu.exe.debug.1962928285/append=true
+environment/project/cdt.managedbuild.config.gnu.exe.debug.1962928285/appendContributed=true

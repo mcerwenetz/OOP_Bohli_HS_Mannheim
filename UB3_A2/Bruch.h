@@ -40,4 +40,5 @@ bool operator==(Bruch a, Bruch b);
 bool operator!=(Bruch a, Bruch b);
 void operator*=(Bruch a, Bruch b);
 Bruch operator*(Bruch a, Bruch b);
+int ggT(Bruch a, int i);
 #endif /* BRUCH_H_ */

@@ -9,5 +9,6 @@
 
 int main()
 {
-	Bruch b = 2*Bruch(15,4);
+	//Bruch b = 2*Bruch(15,4);
+	Bruch(-2,-4);
 }

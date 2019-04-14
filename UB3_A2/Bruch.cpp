@@ -6,6 +6,7 @@
  */
 
 #include "Bruch.h"
+#include "math.h"
 
 Bruch::Bruch() {
  this->setNenner(0);
@@ -32,14 +33,9 @@ void Bruch::normalize()
 	{
 		_nenner=_nenner*(-1);
 	}
-	/*if(_nenner>=1)
-	{
-		int i;
-		for(i =_zaehler; (_nenner%i!=0 && _zaehler%i!=0); i--)
-		{}
-		_zaehler/=i;
-		_nenner/=i;
-	}*/
+	int ggt=ggT(*this,abs(this->zaehler()));
+	setNenner(_nenner/ggt);
+	setZaehler(_zaehler/ggt);
 }
 
 bool operator==(Bruch a, Bruch b)
@@ -71,4 +67,16 @@ Bruch operator*(Bruch a, Bruch b)
 	erg.setZaehler(a.zaehler()*b.zaehler());
 	erg.setNenner(a.nenner()*b.nenner());
 	return erg;
+}
+
+int ggT(Bruch a, int i)
+{
+	if(a.zaehler()%i==0 && a.nenner()%i==0)
+	{
+		return (i);
+	}
+	else
+	{
+		return(ggT(a, i-1));
+	}
 }

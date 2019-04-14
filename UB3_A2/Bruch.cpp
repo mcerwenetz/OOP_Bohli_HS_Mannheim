@@ -19,10 +19,27 @@ Bruch::Bruch(int zaehler, int nenner)
 {
 	setZaehler(zaehler);
 	setNenner(nenner);
+	normalize();
 }
 
 Bruch::~Bruch() {
 	// TODO Auto-generated destructor stub
+}
+
+void Bruch::normalize()
+{
+	if(_zaehler < 0 && _nenner <0)
+	{
+		_nenner=_nenner*(-1);
+	}
+	if(_nenner>=1)
+	{
+		int i;
+		for(i =_zaehler; _nenner%i!=0; i--)
+		{}
+		_zaehler/=i;
+		_nenner/=i;
+	}
 }
 
 bool operator==(Bruch a, Bruch b)
@@ -47,6 +64,7 @@ void operator*=(Bruch a, Bruch b)
 	a.setNenner(a.nenner()*b.nenner());
 	a.setZaehler(a.zaehler()*b.zaehler());
 }
+
 Bruch operator*(Bruch a, Bruch b)
 {
 	Bruch erg;

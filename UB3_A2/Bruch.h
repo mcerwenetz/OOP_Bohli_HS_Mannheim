@@ -21,8 +21,6 @@ public:
 		return _zaehler;
 	}
 
-
-
 	int nenner()
 	{
 		return _nenner;
@@ -35,6 +33,7 @@ public:
 	void setZaehler(int zaehler) {
 		_zaehler = zaehler;
 	}
+	void normalize();
 };
 
 bool operator==(Bruch a, Bruch b);

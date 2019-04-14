@@ -10,8 +10,5 @@
 int main()
 {
 	//Bruch b = 2 * Bruch(15,4);
-	Bruch a(1,1);
-	Bruch b(3,4);
-	Bruch c= 2*b;
-	a=c;
+	Bruch (2,6);
 }

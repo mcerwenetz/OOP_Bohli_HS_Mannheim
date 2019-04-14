@@ -16,13 +16,13 @@ void crash();
 
 int main(int argc, const char* argv[])
 {
-/*
+
 if(argc == 2 && strcmp(argv[1],"--crash")==0)
 	{
-		//crash();
+		crash();
 	}
 klappt();
-*/
+
 
 IntVector c(5),d(7);
 cout << "c";
@@ -32,7 +32,6 @@ d.out();
 c=d;
 cout << "new c";
 c.out();
-
 
 
 }

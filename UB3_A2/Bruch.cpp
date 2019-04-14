@@ -32,14 +32,14 @@ void Bruch::normalize()
 	{
 		_nenner=_nenner*(-1);
 	}
-	if(_nenner>=1)
+	/*if(_nenner>=1)
 	{
 		int i;
-		for(i =_zaehler; _nenner%i!=0; i--)
+		for(i =_zaehler; (_nenner%i!=0 && _zaehler%i!=0); i--)
 		{}
 		_zaehler/=i;
 		_nenner/=i;
-	}
+	}*/
 }
 
 bool operator==(Bruch a, Bruch b)

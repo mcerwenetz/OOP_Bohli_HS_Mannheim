@@ -7,11 +7,8 @@
 
 #include "Bruch.h"
 #include "math.h"
+#include <iostream>
 
-Bruch::Bruch() {
- this->setNenner(0);
- this->setZaehler(0);
-}
 Bruch::Bruch(int zahl) {
 	setNenner(1);
 	setZaehler(zahl);
@@ -29,13 +26,22 @@ Bruch::~Bruch() {
 
 void Bruch::normalize()
 {
-	if(_zaehler < 0 && _nenner <0)
+	if(_nenner <0)
 	{
 		_nenner=_nenner*(-1);
+		_zaehler=zaehler()*(-1);
+
 	}
-	int ggt=ggT(*this,abs(this->zaehler()));
+	int ggt=ggT(_zaehler, _nenner);
 	setNenner(_nenner/ggt);
 	setZaehler(_zaehler/ggt);
+}
+
+void Bruch::operator*=(Bruch b)
+{
+	_zaehler=_zaehler*(b.zaehler());
+	_nenner=_nenner*(b.nenner());
+	normalize();
 }
 
 bool operator==(Bruch a, Bruch b)
@@ -55,28 +61,21 @@ bool operator!=(Bruch a, Bruch b)
 	else return false;
 }
 
-void operator*=(Bruch a, Bruch b)
-{
-	a.setNenner(a.nenner()*b.nenner());
-	a.setZaehler(a.zaehler()*b.zaehler());
-}
-
 Bruch operator*(Bruch a, Bruch b)
 {
-	Bruch erg;
+	Bruch erg(0,1);
 	erg.setZaehler(a.zaehler()*b.zaehler());
 	erg.setNenner(a.nenner()*b.nenner());
+	erg.normalize();
 	return erg;
 }
 
-int ggT(Bruch a, int i)
+int ggT(int a, int b)
 {
-	if(a.zaehler()%i==0 && a.nenner()%i==0)
+	while (a!=0)
 	{
-		return (i);
+		std::swap(a,b);
+		a%=b;
 	}
-	else
-	{
-		return(ggT(a, i-1));
-	}
+	return b;
 }

@@ -13,7 +13,7 @@ private:
 	int _zaehler;
 	int _nenner;
 public:
-	Bruch(int zaehler, int nenner);
+	explicit Bruch(int zaehler, int nenner);
 	Bruch(int zahl);
 	Bruch();
 	virtual ~Bruch();
@@ -34,11 +34,11 @@ public:
 		_zaehler = zaehler;
 	}
 	void normalize();
+	void operator*=(Bruch b);
 };
 
 bool operator==(Bruch a, Bruch b);
 bool operator!=(Bruch a, Bruch b);
-void operator*=(Bruch a, Bruch b);
 Bruch operator*(Bruch a, Bruch b);
-int ggT(Bruch a, int i);
+int ggT(int a, int b);
 #endif /* BRUCH_H_ */

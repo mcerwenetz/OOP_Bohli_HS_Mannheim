@@ -13,6 +13,9 @@ public:
 	Vektor &operator=(const Vektor &other);
 	double &operator[](unsigned i) {return _vek[i];}
 	void resize(unsigned l);
+	unsigned getlen() {return _len;}
+	double getvec(int stelle){return (_vek[stelle]);}
+	void set_vek(int vec, int stelle){_vek[stelle]=vec;}
 
 
 private:

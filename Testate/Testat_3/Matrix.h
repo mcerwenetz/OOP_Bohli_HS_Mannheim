@@ -11,11 +11,26 @@
 class Matrix {
 public:
 	Matrix();
+
+	Matrix(int zahl);
+
+	Matrix(int spaltenanzahl, int zeilenanzahl);
+
 	Matrix(int* vector, int spaltenanzahl, int zeilenanzahl);
-	Matrix(Matrix &other);
+
+	Matrix(Matrix& other);
+
 	virtual ~Matrix();
 
-	void operator= (Matrix &other);
+
+	Matrix& operator= (const Matrix &other);
+
+	Matrix operator+ (Matrix &other);
+
+	Matrix operator- (Matrix &other);
+
+	Matrix operator* (Matrix &other);
+
 
 	int getSpalten() const {
 		return _spalten;
@@ -32,8 +47,23 @@ public:
 	void setVec(int* vec) {
 		_vec = vec;
 	}
+
+	int getZeilen() const {
+		return _zeilen;
+	}
+
+	void setZeilen(int zeilen) {
+		_zeilen = zeilen;
+	}
+
+
 	void out();
+
 	int at(int zeile, int spalte);
+
+	int* p_at(int zeile, int spalte);
+
+	void fun(int a);
 
 
 private:

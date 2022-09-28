@@ -22,7 +22,8 @@ int main(int argc, char* argv[])
 	//Radizent ist die Zahl aus der die Wurzel gezogen wird
 	radizent=atof(argv[1]);
 	//Abstand wird automatisch auf 10^-6 gestellt, sollte er nicht mit angegeben sein.
-	if(argc < 2)
+//	printf("%d", argc);
+	if(argc <= 2)
 	{
 		soll_abstand=1e-06;
 	}

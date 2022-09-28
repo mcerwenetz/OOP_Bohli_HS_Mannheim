@@ -7,30 +7,18 @@
 
 #include <iostream>
 #include <stdio.h>
+#include "ooptool.h"
 
 
-int main(int argc, char* argv[])
+int main(int argc, const char* argv[])
 {
-	//Deklaration
-	double soll_abstand, radizent,heron;
+	argsp_t argsp(argc, argv);
+	double radizent = argsp.double_pos(0, 10.0);
+	double soll_abstand = argsp.double_pos(1, 1e-6);
+	double abstand = 1.0;
+	double heron = 0.0;
 	double heron_plus_one=1;
-	/*abstand wird auf 1 gesetzt, damit die Schleife überhaup durchläuft.
-	 * Bessere Lösung wäre eine do_while Schleife. Aber es geht auch so.
-	 */
-	double abstand = 1;
 
-	//Radizent ist die Zahl aus der die Wurzel gezogen wird
-	radizent=atof(argv[1]);
-	//Abstand wird automatisch auf 10^-6 gestellt, sollte er nicht mit angegeben sein.
-//	printf("%d", argc);
-	if(argc <= 2)
-	{
-		soll_abstand=1e-06;
-	}
-	else
-	{
-		soll_abstand=atof(argv[2]);
-	}
 	for(int i=0; abstand > soll_abstand; i++)
 	{
 		/* Im ersten Durchlauf wird das erste heron-glied noch anders berechnet.
